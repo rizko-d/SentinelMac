@@ -1,0 +1,26 @@
+# Curated Tracker & Telemetry Radar List
+# Format: one domain per line, lowercased
+
+# Common Advertising & Ad-tech
+google-analytics.com
+analytics.google.com
+googletagmanager.com
+doubleclick.net
+adservice.google.com
+pagead2.googlesyndication.com
+
+# Facebook / Meta Tracking
+graph.facebook.com
+connect.facebook.net
+pixel.facebook.com
+tr.snapchat.com
+
+# Telemetry & User Session Tracking
+segment.io
+api.segment.io
+telemetry.applovin.com
+crashlytics.com
+app-measurement.com
+inbox.appdynamics.com
+browser-intake-datadoghq.com
+o11y.trackers.example.com
