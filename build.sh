@@ -12,6 +12,9 @@ swiftc -emit-library -emit-module \
     "$DIR/Sources/SentinelCore/TLSParser.swift" \
     "$DIR/Sources/SentinelCore/BlocklistEngine.swift" \
     "$DIR/Sources/SentinelCore/LocalProxyServer.swift" \
+    "$DIR/Sources/SentinelCore/TCCReader.swift" \
+    "$DIR/Sources/SentinelCore/HardwareSensorWatcher.swift" \
+    -lsqlite3 \
     -o "$BUILD_DIR/libSentinelCore.dylib"
 
 echo "[+] Compiling SentinelMac CLI..."
@@ -35,4 +38,10 @@ swiftc "$DIR/Tests/SentinelCoreTests/TLSParserTests.swift" \
     -o "$BUILD_DIR/TestTLSParser"
 "$BUILD_DIR/TestTLSParser"
 
-echo "[✓] Build & all tests succeeded."
+swiftc "$DIR/Tests/SentinelCoreTests/TCCReaderTests.swift" \
+    -I"$BUILD_DIR" -L"$BUILD_DIR" -lSentinelCore -lsqlite3 \
+    -Xlinker -rpath -Xlinker "$BUILD_DIR" \
+    -o "$BUILD_DIR/TestTCCReader"
+"$BUILD_DIR/TestTCCReader"
+
+echo "[✓] Build & all Phase 3 tests succeeded."
