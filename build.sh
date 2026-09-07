@@ -14,6 +14,10 @@ swiftc -emit-library -emit-module \
     "$DIR/Sources/SentinelCore/LocalProxyServer.swift" \
     "$DIR/Sources/SentinelCore/TCCReader.swift" \
     "$DIR/Sources/SentinelCore/HardwareSensorWatcher.swift" \
+    "$DIR/Sources/SentinelCore/AppState.swift" \
+    "$DIR/Sources/SentinelCore/UIComponents.swift" \
+    "$DIR/Sources/SentinelCore/DashboardWindowView.swift" \
+    "$DIR/Sources/SentinelCore/MenuBarView.swift" \
     -lsqlite3 \
     -o "$BUILD_DIR/libSentinelCore.dylib"
 
@@ -44,4 +48,4 @@ swiftc "$DIR/Tests/SentinelCoreTests/TCCReaderTests.swift" \
     -o "$BUILD_DIR/TestTCCReader"
 "$BUILD_DIR/TestTCCReader"
 
-echo "[✓] Build & all Phase 3 tests succeeded."
+echo "[✓] Build & all Phase 4 tests succeeded."
